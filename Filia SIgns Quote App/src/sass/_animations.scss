@@ -1,0 +1,80 @@
+@keyframes flashInvalid {
+	0% {
+		outline: 2px solid rgba(255, 0, 0, 0);
+	}
+	100% {
+		outline: 4px solid rgb(255, 0, 0);
+	}
+}
+
+@keyframes flipAnim {
+	0% {
+		transform: translateX(-130%) skew(30deg);
+		width: 50%;
+	}
+	50% {
+		width: 80%;
+		transform: translateX(-50%);
+	}
+	100% {
+		width: 50%;
+		transform: translateX(230%) skew(-30deg);
+	}
+}
+@keyframes flashbackground {
+	0% {
+		background-color: var(--bg-clr-act);
+	}
+}
+@keyframes flashbackground--1 {
+	0% {
+		background-color: var(--bg-clr-act);
+	}
+	100% {
+		opacity: 0;
+	}
+}
+@keyframes flashbackground--2 {
+	0% {
+		background-color: var(--bg-clr-on);
+	}
+}
+@keyframes rotate {
+	0% {
+		background-color: var(--bg-clr-on);
+	}
+	50% {
+		transform: rotate(-180deg);
+	}
+	100% {
+		transform: rotate(-360deg);
+	}
+}
+.animFlip {
+	&::after {
+		animation: flipAnim forwards 0.5s;
+		content: '';
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background-color: var(--bg-clr-act);
+		z-index: -1;
+	}
+}
+.backgroundFlash {
+	animation: flashbackground 0.5s ease-in-out;
+}
+.backgroundFlash--1 {
+	animation: flashbackground--1 1s ease-in-out;
+
+	& > * {
+		animation: flashbackground--1 1s ease-in-out;
+	}
+}
+.backgroundFlash--2 {
+	animation: flashbackground--2 1s ease-in-out;
+}
+
+.rotate {
+	animation: rotate 0.5s ease-in-out;
+}

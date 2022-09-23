@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0, user-scalable=no"
+		/>
+		<title>Filia Signs Quote App</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="css/style.css" />
+		<!-- <link rel="stylesheet" href="/css/packer.css" /> -->
+	</head>
+	<body>
+		<header>
+			<h1>Quote Planner</h1>
+		</header>
+		<main class="main__grid">
+			<div class="input__grid">
+				<div class="input__container" id="inputContainer">
+					<div class="input__material">
+						<label for="materialSelector" class="input__material--label">
+							MATERIAL
+						</label>
+						<select
+							name="materialSelector"
+							id="materialSelector"
+							class="input__material--list"
+						>
+							<option value="disabled" disabled>--- Select Material ---</option>
+							<optgroup id="cutVinylGrp" label="CUT VINYL">
+								<option value="vinylBlack">Vinyl Black</option>
+								<option selected value="vinylWhite">Vinyl White</option>
+								<option value="vinylBlue">Vinyl Blue</option>
+								<option value="vinylRed">Vinyl Red</option>
+								<option value="vinylYellow">Vinyl Yellow</option>
+								<option value="vinylPink">Vinyl Pink</option>
+								<option value="vinylGreen">Vinyl Green</option>
+								<option value="vinylSilver">Vinyl Silver</option>
+								<option value="vinylReflective">Vinyl Reflective</option>
+							</optgroup>
+							<optgroup id="probondGrp" label="PROBOND">
+								<option value="probondBlack">Probond Black</option>
+								<option value="probondWhite">Probond White</option>
+								<option value="probondBlue">Probond Blue</option>
+								<option value="probondRed">Probond Red</option>
+								<option value="probondYellow">Probond Yellow</option>
+								<option value="probondGrey">Probond Pink</option>
+								<option value="probondGreen">Probond Green</option>
+								<option value="probondSilver">Probond Silver</option>
+							</optgroup>
+							<optgroup label="PRINT VINYL">
+								<option value="printRemoveable">Removeable</option>
+								<option value="printEgr">EGR</option>
+								<option value="printPerm">Permanent</option>
+								<option value="uvLaminate">UV Laminate</option>
+								<option value="standardLaminate">Standard Laminate</option>
+							</optgroup>
+							<optgroup id="corfluteGrp" label="CORFLUTE">
+								<option value="corfluteStandard">Corflute Standard 3MM</option>
+								<option value="corfluteThick">Corflute Thick 5MM</option>
+								<option value="corfluteYellow">Corflute Yellow 5MM</option>
+								<option value="corufluteBlack">Corflute Black 5MM</option>
+							</optgroup>
+							<optgroup id="aFrames" label="A-FRAMES">
+								<option value="aFrameMetal">A-Frame Metal</option>
+								<option value="aFrameInsert">A-Frame Corflute Insert</option>
+								<option value="aFrameRealestate">A-Frame Real Estate</option>
+							</optgroup>
+						</select>
+					</div>
+					<!-- TURN OFF MATERIAL -->
+					<!-- TURNING OFF THE MATERIAL ON SWITCH -->
+					<!-- <div class="input__switch--mat">
+						<label for="materialOnOff">Material</label>
+						<input
+							type="checkbox"
+							name="material-on-off"
+							id="materialOnOff"
+							class="input__switch--material--btn"
+							unchecked
+						/>
+						<label
+							for="materialOnOff"
+							class="input__switch--material--label"
+						></label>
+					</div> -->
+
+					<!-- NEW ADD MATERIAL BUTTON -->
+					<button id="addBtn" class="input__add--btn">
+						<span></span>
+						<span></span>
+					</button>
+					<!-- TURN OFF ENTIRE SECTION -->
+					<div class="input__switch">
+						<input
+							type="checkbox"
+							name="on-off-sw"
+							id="on-off-sw--1"
+							class="input__switch--btn"
+							checked
+						/>
+						<label for="on-off-sw--1" class="input__switch--label"></label>
+					</div>
+					<div id="materialSection" class="material">
+						<div id="settings">
+							<div class="examples">
+								<label for="examples">Presets:</label>
+								<select id="examples">
+									<option value="simple">None</option>
+									<option value="square">A3</option>
+									<option value="tall">A2</option>
+									<option value="wide">A1</option>
+									<option value="tallwide">A0</option>
+									<option value="power2">powers of 2</option>
+									<option value="oddeven">odd and even</option>
+									<option value="complex">complex</option>
+								</select>
+							</div>
+
+							<div class="blocks">
+								<label for="blocks">
+									Blocks:
+									<span class="example">
+										<b>W</b>
+										x
+										<b>H</b>
+										[x
+										<b>N</b>
+										]
+									</span>
+								</label>
+								<div class="blocks__input--wrap">
+									<textarea id="blocks" rows="10"></textarea>
+									<div class="blocks__inputs">
+										<button class="" id="blockCheck">FLIP ⇄</button>
+										<button class="hide__flip" id="blockCheck">FLIP ⇄</button>
+										<button class="hide__flip" id="blockCheck">FLIP ⇄</button>
+										<button class="hide__flip" id="blockCheck">FLIP ⇄</button>
+										<button class="hide__flip" id="blockCheck">FLIP ⇄</button>
+										<button class="hide__flip" id="blockCheck">FLIP ⇄</button>
+										<button class="hide__flip" id="blockCheck">FLIP ⇄</button>
+									</div>
+								</div>
+							</div>
+							<div class="size__sort__inputs">
+								<div class="size">
+									<label for="size">size:</label>
+									<select id="size">
+										<option>automatic</option>
+									</select>
+									<select name="multiplier" id="matMultiplier">
+										<option selected value="1">x1</option>
+										<option value="2">x2</option>
+										<option value="3">x3</option>
+										<option value="4">x4</option>
+										<option value="5">x5</option>
+										<option value="6">x6</option>
+										<option value="7">x7</option>
+										<option value="8">x8</option>
+										<option value="9">x9</option>
+										<option value="10">x10</option>
+										<option value="11">x11</option>
+										<option value="12">x12</option>
+										<option value="13">x13</option>
+										<option value="14">x14</option>
+										<option value="15">x15</option>
+										<option value="16">x16</option>
+										<option value="17">x17</option>
+										<option value="18">x18</option>
+										<option value="19">x19</option>
+										<option value="20">x20</option>
+										<option value="21">x21</option>
+										<option value="22">x22</option>
+										<option value="23">x23</option>
+										<option value="24">x24</option>
+										<option value="25">x25</option>
+										<option value="26">x26</option>
+										<option value="27">x27</option>
+										<option value="28">x28</option>
+										<option value="29">x29</option>
+										<option value="30">x30</option>
+										<option value="31">x31</option>
+										<option value="32">x32</option>
+										<option value="33">x33</option>
+										<option value="34">x34</option>
+										<option value="35">x35</option>
+										<option value="36">x36</option>
+										<option value="37">x37</option>
+										<option value="38">x38</option>
+										<option value="39">x39</option>
+										<option value="40">x40</option>
+										<option value="41">x41</option>
+										<option value="42">x42</option>
+										<option value="43">x43</option>
+										<option value="44">x44</option>
+										<option value="45">x45</option>
+										<option value="46">x46</option>
+										<option value="47">x47</option>
+										<option value="48">x48</option>
+										<option value="49">x49</option>
+										<option value="50">x50</option>
+										<option value="51">x51</option>
+										<option value="52">x52</option>
+										<option value="53">x53</option>
+										<option value="54">x54</option>
+										<option value="55">x55</option>
+										<option value="56">x56</option>
+										<option value="57">x57</option>
+										<option value="58">x58</option>
+										<option value="59">x59</option>
+										<option value="60">x60</option>
+										<option value="61">x61</option>
+										<option value="62">x62</option>
+										<option value="63">x63</option>
+										<option value="64">x64</option>
+										<option value="65">x65</option>
+										<option value="66">x66</option>
+										<option value="67">x67</option>
+										<option value="68">x68</option>
+										<option value="69">x69</option>
+										<option value="70">x70</option>
+										<option value="71">x71</option>
+										<option value="72">x72</option>
+										<option value="73">x73</option>
+										<option value="74">x74</option>
+										<option value="75">x75</option>
+										<option value="76">x76</option>
+										<option value="77">x77</option>
+										<option value="78">x78</option>
+										<option value="79">x79</option>
+										<option value="80">x80</option>
+										<option value="81">x81</option>
+										<option value="82">x82</option>
+										<option value="83">x83</option>
+										<option value="84">x84</option>
+										<option value="85">x85</option>
+										<option value="86">x86</option>
+										<option value="87">x87</option>
+										<option value="88">x88</option>
+										<option value="89">x89</option>
+										<option value="90">x90</option>
+										<option value="91">x91</option>
+										<option value="92">x92</option>
+										<option value="93">x93</option>
+										<option value="94">x94</option>
+										<option value="95">x95</option>
+										<option value="96">x96</option>
+										<option value="97">x97</option>
+										<option value="98">x98</option>
+										<option value="99">x99</option>
+										<option value="100">x100</option>
+									</select>
+								</div>
+
+								<div class="sort">
+									<label for="sort">sort:</label>
+									<select id="sort">
+										<option value="none">none</option>
+										<option value="width">width</option>
+										<option value="height">height</option>
+										<option value="maxside">maxside</option>
+										<option value="area" selected>area</option>
+										<option value="random">random</option>
+									</select>
+									<div
+										id="radio-btn__container"
+										class="percent-length__container"
+									>
+										<span id="radioBtnSpan"></span>
+										<label id="radioBtnLabels" for="percentInput">%</label>
+										<input
+											id="percentInput"
+											type="radio"
+											value="percent"
+											name="percentLength"
+											class="p-l__radio-btns"
+										/>
+										<label id="radioBtnLabels" for="lengthInput">⇄</label>
+										<input
+											id="lengthInput"
+											type="radio"
+											value="length"
+											name="percentLength"
+											class="p-l__radio-btns"
+											checked
+										/>
+									</div>
+								</div>
+
+								<div class="color">
+									<label for="color">color:</label>
+									<select id="color">
+										<option>pastel</option>
+										<option>basic</option>
+										<option>gray</option>
+										<option>vintage</option>
+										<option>solarized</option>
+										<option>none</option>
+									</select>
+								</div>
+
+								<div class="ratio">
+									<div>
+										Filled:
+										<span id="ratio">0</span>
+										%
+									</div>
+									<div class="ratio__required">
+										|
+										<button
+											id="refreshBtn"
+											onclick="calcMultiplier()"
+											class="refresh-icon"
+										></button>
+										<span id="requiredAmount">...</span>
+										|
+										<span id="costIfMultiplied">$894.8</span>
+										|
+										<span id="canvasSizeCalc"></span>
+									</div>
+								</div>
+							</div>
+							<!-- <div class="multiplier">
+								<label for="matMultiplier">Multiplier:</label>
+								<span class="multiplier__indicator">1</span>
+								<span>1 <</span>
+								<input
+									type="range"
+									name="multiplier"
+									id="matMultiplier"
+									min="1"
+									max="20"
+									value="0"
+								/>
+								<span>> 20</span>
+							</div> -->
+							<div id="nofit" class="nofit"></div>
+						</div>
+
+						<div id="packing">
+							<canvas id="canvas">
+								<div id="unsupported">
+									Sorry, this example cannot be run because your browser does
+									not support the &lt;canvas&gt; element
+								</div>
+							</canvas>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- INVOICE -->
+			<section class="invoice">
+				<div id="invoiceMaterial" class="invoice__material">
+					<div class="invoice--header">
+						<span></span>
+						<span class="--1">Materials</span>
+						<span class="--2">Qty</span>
+						<span class="--3">Unit Price</span>
+						<span class="--4">Amount</span>
+					</div>
+				</div>
+				<div class="invoice__labor">
+					<div class="invoice--header">
+						<span></span>
+						<span class="--1">Labor</span>
+						<span class="--2">Qty</span>
+						<span class="--3">Unit Price</span>
+						<span class="--4">Amount</span>
+					</div>
+					<div class="invoice__labor--cutprint">
+						<span></span>
+						<span class="--1">Cut / Print</span>
+						<input
+							type="number"
+							name=""
+							id="cutPrintHours"
+							placeholder="1"
+							oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1').replace(/^0[^.]/, '0');"
+						/>
+						<input
+							type="number"
+							name=""
+							id="cutPrintUnit"
+							placeholder="$40"
+							oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1').replace(/^0[^.]/, '0');"
+						/>
+						<span class="--4 labor__total" id="cutPrintTotal">$</span>
+					</div>
+					<div class="invoice__labor--pred">
+						<span></span>
+						<span class="--1">Weeding / Laminating</span>
+						<input
+							type="number"
+							name=""
+							id="weedingLaminatingHours"
+							placeholder="1"
+							oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1').replace(/^0[^.]/, '0');"
+						/>
+						<input
+							type="number"
+							name=""
+							id="weedingLaminatingUnit"
+							placeholder="$40"
+							oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1').replace(/^0[^.]/, '0');"
+						/>
+						<span class="--4 labor__total" id="weedingLaminatingTotal">$</span>
+					</div>
+					<div class="invoice__labor--application">
+						<span></span>
+						<span class="--1">Application</span>
+						<input
+							type="number"
+							name=""
+							id="applicationHours"
+							placeholder="1"
+							oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1').replace(/^0[^.]/, '0');"
+						/>
+						<input
+							type="number"
+							name=""
+							id="applicationUnit"
+							placeholder="$40"
+							oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1').replace(/^0[^.]/, '0');"
+						/>
+						<span class="--4 labor__total" id="applicationTotal">$</span>
+					</div>
+					<div class="invoice__labor--installation">
+						<span></span>
+						<span class="--1">Installation</span>
+						<input
+							type="number"
+							name=""
+							id="installationHours"
+							placeholder="1"
+							oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1').replace(/^0[^.]/, '0');"
+						/>
+						<input
+							type="number"
+							name=""
+							id="installationUnit"
+							placeholder="$40"
+							oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1').replace(/^0[^.]/, '0');"
+						/>
+						<span class="--4 labor__total" id="installationTotal">$</span>
+					</div>
+					<div class="invoice__labor--design">
+						<span></span>
+						<span class="--1">Design</span>
+						<input
+							type="number"
+							name=""
+							id="designHours"
+							placeholder="1"
+							oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1').replace(/^0[^.]/, '0');"
+						/>
+						<input
+							type="number"
+							name=""
+							id="designUnit"
+							placeholder="$40"
+							oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1').replace(/^0[^.]/, '0');"
+						/>
+						<span class="--4 labor__total" id="designTotal">$</span>
+					</div>
+				</div>
+				<div id="" class="invoice__total">
+					<div class="invoice--header">
+						<span></span>
+						<span class="--1"></span>
+						<span class="--2"></span>
+						<span class="--3">Total:</span>
+						<span id="totalQuote" class="--4"></span>
+					</div>
+				</div>
+			</section>
+		</main>
+		<script rel="text/javascript" src="app.js"></script>
+		<script src="jquery.js"></script>
+		<script src="packer.js"></script>
+		<script src="packer.growing.js"></script>
+		<script src="demo.js"></script>
+	</body>
+</html>

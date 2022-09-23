@@ -1,0 +1,16 @@
+.refresh-icon {
+	width: 2rem;
+	height: 2rem;
+	border-radius: 50%;
+	border: 1px solid #000;
+	position: relative;
+	margin: 0.3rem;
+
+	&::before {
+		content: '↺';
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+}
